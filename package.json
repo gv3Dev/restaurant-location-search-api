@@ -1,0 +1,33 @@
+{
+  "name": "restaurant-location-search-api",
+  "version": "1.0.0",
+  "description": "A Node.js package that serves as an unofficial API wrapper, providing a unified interface to fetch restaurant locations from various chains without the need for Google Maps API, making it a cost-free solution. This package leverages the specific, unofficial APIs of supported restaurants such as McDonald's, Wendy's, Chipotle, Burger King, Popeyes, and Taco Bell, offering a simplified way to retrieve locations based on latitude and longitude. It's designed for developers who need to integrate restaurant location functionalities into their applications seamlessly, with plans to expand support to more restaurant chains in the future.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsrhax/restaurant-location-search-api.git"
+  },
+  "keywords": [
+    "api",
+    "location",
+    "food search",
+    "McDonald's",
+    "nearby location",
+    "free google maps",
+    "restaurants"
+  ],
+  "author": "GSRHaX <gsrhackz@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsrhax/restaurant-location-search-api/issues"
+  },
+  "homepage": "https://github.com/gsrhax/restaurant-location-search-api/#readme",
+  "dependencies": {
+    "axios": "^0.21.4",
+    "xml2js": "^0.6.2"
+  }
+}
