@@ -49,6 +49,68 @@ Fetches restaurant locations based on the specified parameters.
 - **maxResults**: Maximum number of results to return.
 - **nearbyOnly** (optional): Set to `true` to fetch only the nearest location. ( might not work for all restuarants )
 
+
+## Example JSON Response
+
+Below is an example of the JSON response returned by the `getLocations` function for Taco Bell locations:
+
+```json
+{
+  "nearByStores": [
+    {
+      "storeStatus": "openNow",
+      "pickupStoreStatusForLocation": "Activated",
+      "phoneNumber": "+12122330848",
+      "storeNumber": "035336",
+      "timeZone": "GMT-05:00",
+      "roundUpFlag": true,
+      "todayBusinessHours": {
+        "openTime": "07:00",
+        "closeTime": "23:00"
+      },
+      "delivery": true,
+      "address": {
+        "streetAddress": "123 Example St",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10001"
+      },
+      "geoPoint": {
+        "latitude": 40.712776,
+        "longitude": -74.005974
+      },
+      "formattedDistance": "0.30 Miles"
+    },
+    {
+      "storeStatus": "openNow",
+      "pickupStoreStatusForLocation": "Activated",
+      "phoneNumber": "+16468239315",
+      "storeNumber": "035828",
+      "timeZone": "GMT-05:00",
+      "roundUpFlag": true,
+      "todayBusinessHours": {
+        "openTime": "07:00",
+        "closeTime": "22:00"
+      },
+      "delivery": true,
+      "address": {
+        "streetAddress": "456 Another Rd",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10002"
+      },
+      "geoPoint": {
+        "latitude": 40.715776,
+        "longitude": -74.015974
+      },
+      "formattedDistance": "1.1 Miles"
+    }
+    // Additional stores omitted for brevity
+  ]
+}
+```
+
+
 ## Supported Restaurants
 
 - McDonald's
