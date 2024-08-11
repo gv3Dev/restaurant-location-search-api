@@ -1,4 +1,4 @@
-# restaurant-location-search-api
+# restaurant-location-search-api 🍔🍹
 
 A Node.js package that serves as an unofficial API wrapper, providing a unified interface to fetch restaurant locations from various chains without the need for Google Maps API, making it a cost-free solution. This package leverages the specific, unofficial APIs of supported restaurants such as McDonald's, Wendy's, Chipotle, Burger King, Popeyes, and Taco Bell, offering a simplified way to retrieve locations based on latitude and longitude. It's designed for developers who need to integrate restaurant location functionalities into their applications seamlessly, with plans to expand support to more restaurant chains in the future.
 
