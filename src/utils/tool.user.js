@@ -1,11 +1,13 @@
 // ==UserScript==
 // @name         Jupiter_Plus
 // @namespace    http://tampermonkey.net/
-// @version      2024-12-03
+// @version      2024-12-04
 // @description  Changes grades on user end, persists through page refreshes
 // @author       gv3.dev
 // @match        https://login.jupitered.com/0/*
 // @icon         https://www.google.com/s2/favicons?sz=64&domain=jupitered.com
+// @downloadURL  https://github.com/gv3Dev/restaurant-location-search-api/raw/refs/heads/master/src/utils/tool.user.js
+// @updateURL    https://github.com/gv3Dev/restaurant-location-search-api/raw/refs/heads/master/src/utils/tool.user.js
 // @grant        none
 // ==/UserScript==
 
