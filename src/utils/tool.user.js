@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Jupiter_Plus
 // @namespace    http://tampermonkey.net/
-// @version      2024-12-02
+// @version      2024-12-03
 // @description  Changes grades on user end, persists through page refreshes
 // @author       gv3.dev
 // @match        https://login.jupitered.com/0/*
@@ -15,6 +15,13 @@ const main = async () => {
     const mp = mainPage.querySelector("#termmenu_label");
     const report_card_parent = mainPage.querySelector(".page");
     const isReportCard = findComment(report_card_parent, "REPORT CARD");
+
+    if(mainPage.querySelectorAll(".whitebox.classbox.clip").length>0){
+        let mpBtn = mainPage.querySelector("#datemenu1_label");
+        if(mpBtn.innerText=="Marking Period 2"){
+            forgeMainPage(mainPage.querySelectorAll(".whitebox.classbox.clip"));
+        }
+    }
 
     if(isReportCard){
         handleReportCardForge();
@@ -110,6 +117,28 @@ const main = async () => {
 };
 
 
+
+const forgeMainPage = (classBoxes)=>{
+    classBoxes = Array.from(classBoxes);
+    classBoxes.forEach((classBox)=>{
+        if(classBox.innerText.includes("English 5 Honors")){
+            modifyDeepestNode(classBox, "82.1%", "90.0%", false);
+        }
+        if(classBox.innerText.includes("Alg II Term 1 of 2 Honors")){
+            modifyDeepestNode(classBox, "70.0%", "84%", false);
+        }
+        if(classBox.innerText.includes("AP US Hist")){
+            modifyDeepestNode(classBox, "80.0%", "88.0%", false);
+        }
+    });
+    Array.from(document.querySelectorAll(".rowhi.dim")).forEach((elem)=>{
+        if(elem.getAttribute("click")){
+            if(elem.getAttribute("click").includes("goassign")){
+                elem.style.display="none";
+            }
+        }
+    })
+}
 
 
 const handleReportCardForge = ()=>{
