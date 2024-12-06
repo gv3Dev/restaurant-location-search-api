@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Jupiter_Plus
 // @namespace    http://tampermonkey.net/
-// @version      2024-12-04
+// @version      2024-12-05
 // @description  Changes grades on user end, persists through page refreshes
 // @author       gv3.dev
 // @match        https://login.jupitered.com/0/*
@@ -120,6 +120,31 @@ const main = async () => {
 
 
 
+const handleReportCardForge = ()=>{
+    const card = document.querySelector(".bord").querySelector("tbody");
+    const subjects = document.querySelector(".bord>tbody").querySelectorAll(".topline[class='topline']");
+    Array.from(subjects).forEach((subject)=>{
+        if(subject.innerText.includes("Alg II Term 1 of 2 Honors")){
+            modifyDeepestNode(subject, "70", "84", false);
+            modifyDeepestNode(subject.nextElementSibling, "51", "85", false);
+            modifyDeepestNode(subject.nextElementSibling, "63", "80", false);
+        }
+        else if(subject.innerText.includes("English 5 Honors")){
+            modifyDeepestNode(subject, "82", "90", false);
+            modifyDeepestNode(subject.nextElementSibling, "73", "85", false);
+            modifyDeepestNode(subject.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling, "45", "78", false);
+            modifyDeepestNode(subject.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling, "67", "75", false);
+        }
+        else if(subject.innerText.includes("AP US Hist")){
+            modifyDeepestNode(subject, "80", "88", false);
+            modifyDeepestNode(subject.nextElementSibling.nextElementSibling, "73", "85", false);
+            modifyDeepestNode(subject.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling, "68", "75", false);
+            modifyDeepestNode(subject.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling.nextElementSibling, "70", "74", false);
+        }
+    })
+}
+
+
 const forgeMainPage = (classBoxes)=>{
     classBoxes = Array.from(classBoxes);
     classBoxes.forEach((classBox)=>{
@@ -140,11 +165,6 @@ const forgeMainPage = (classBoxes)=>{
             }
         }
     })
-}
-
-
-const handleReportCardForge = ()=>{
-
 }
 
 
